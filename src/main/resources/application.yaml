@@ -28,9 +28,9 @@ spring:
         default_batch_fetch_size: 100
   h2:
     console:
-      enabled: true
+      enabled: false
   sql:
     init:
       mode: always
- 
+
 
