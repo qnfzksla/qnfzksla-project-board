@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns="http://www.w3.org/1999/html">
+<html lang="ko"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>게시판 페이지</title>
@@ -8,10 +8,7 @@
 
 <body>
 
-   <header>
-       header 삽입부
-       <hr>
-   </header>
+   <header th:replace="header :: header"></header>
 
    <main>
        <label for="search-type" hidden>유형</label>
@@ -87,10 +84,8 @@
    </main>
 
 <hr>
-   
-   <footer>
-   footer
-   </footer>
+
+  <footer th:replace="footer :: footer"></footer>
 
 
 </body>
