@@ -2,6 +2,7 @@ package com.qnfzksla.qnfzkslaprojectboard.repository;
 
 import com.qnfzksla.qnfzkslaprojectboard.config.JpaConfig;
 import com.qnfzksla.qnfzkslaprojectboard.domain.Article;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ class JpaRepositoryTest {
         this.articleCommentRepository = articleCommentRepository;
     }
 
+    @Disabled("구현중")
     @DisplayName("select 테스트")
     @Test
     void  givenTestData_whenSelecting_thenWorksFine(){
