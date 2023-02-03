@@ -1,6 +1,7 @@
 package com.qnfzksla.qnfzkslaprojectboard.domain;
 
 
+import io.micrometer.core.instrument.Meter;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -66,4 +67,6 @@ public class Article extends  AuditingFields{
     public int hashCode() {
         return Objects.hash(id);
     }
+
+
 }

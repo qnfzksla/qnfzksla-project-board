@@ -85,7 +85,7 @@ class JpaRepositoryTest {
 
     @DisplayName("delete 테스트")
     @Test
-    void  givenTestData_whendeleting_thenWorksFine(){
+    void  givenTestData_whenDeleting_thenWorksFine(){
 
         //Given
         Article article = articleRepository.findById(1L).orElseThrow();

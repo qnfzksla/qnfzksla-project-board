@@ -18,6 +18,8 @@ public interface ArticleCommentRepository extends
         QuerydslPredicateExecutor<ArticleComment>,
         QuerydslBinderCustomizer<QArticleComment> {
 
+    List<ArticleComment> findByArticle_Id(Long articleId);
+
 
 
     @Override
