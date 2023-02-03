@@ -15,6 +15,8 @@ public interface ArticleRepository extends
         JpaRepository<Article, Long>,
         QuerydslPredicateExecutor<Article>,
         QuerydslBinderCustomizer<QArticle> {
+
+
     @Override
    default void customize(QuerydslBindings bindings, QArticle root){
         bindings.excludeUnlistedProperties(true);

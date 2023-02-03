@@ -1,96 +1,77 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns="http://www.w3.org/1999/html">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Qnfzk">
-    <title>게시판 페이지</title>
+    <meta name="author" content="Uno Kim">
+    <title>게시글 페이지</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link href="/static.css/search-bar.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
-
 
 <body>
 
-<header class="p-3 text-bg-dark">
-    <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="/" class="nav-link px-2 text-secondary">Home</a> </li>
-            </ul>
-
-            <div class="text-end">
-                <button type="button" class="btn btn-outline-light me-2">Login</button>
-                <button type="button" class="btn btn-warning">Sign-up</button>
-            </div>
-        </div>
-    </div>
-</header>
+<header id="header"></header>
 
 <main class="container">
- <header class="py-5 text-center">
-   <h1>첫번째 글</h1>
- </header>
+    <header class="py-5 text-center">
+        <h1>첫번째 글</h1>
+    </header>
 
+    <div class="row g-5">
+        <section class="col-md-5 col-lg-4 order-md-last">
+            <aside>
+                <p><span class="nick-name">Uno</span></p>
+                <p><a class="u-url" rel="me" href="mailto:djkehh@gmail.com">uno@mail.com</a></p>
+                <p><time datetime="2022-01-01T00:00:00">2022-01-01</time></p>
+                <p>#java</p>
+            </aside>
+        </section>
 
-   <div class="row g-5">
-   <section class="col-md-5 col-lg-4 order-md-last">
-    <aside>
-       <p><span class="nick-name">Qnfzksla</span> </p>
-        <p><a class="u-url" rel="me" href="mailto:qnfzk123@gmail.com">qnfzk123@gmail.com</a> </p>
-        <p><time datetime="2023-01-01T00:00:00">2023-01-01</time> </p>
-        <p>#java</p>
-    </aside>
-       </section>
+        <article class="col-md-7 col-lg-8">
+            <p>본문<br><br></p>
+        </article>
+    </div>
 
-    <article class="col-md-7 col-lg-8">
-        <p>본문<br><br></p>
-       </article>
-
-   </div>
- <div class="row g-5">
-     <section>
-         <form class="row g-3>">
-             <div class="col-8">
-                 <label for="comment-textbox" hidden>댓글</label>
-                 <textarea class="form-control" id="comment-textbox" placeholder="댓글 쓰기..." rows="3"></textarea>
-             </div>
-             <div class="col-auto">
-                 <label for="comment-submit" hidden>댓글 쓰기</label>
-                 <button class="btn btn-primary" id="comment-submit" type="submit">쓰기</button>
-             </div>
-         </form>
-         <ul>
-             <li>
-                <div>
-                    <time><small>2023-01-01</small></time>
-                    <strong>Uno</strong>
-                    <p>
-                        Lorem ipsim dolor sit amet, consectetur adipiscing elit.<br>
-                        Lorem ipsum dolor sit amet
-                    </p>
+    <div class="row g-5">
+        <section>
+            <form class="row g-3">
+                <div class="col-8">
+                    <label for="comment-textbox" hidden>댓글</label>
+                    <textarea class="form-control" id="comment-textbox" placeholder="댓글 쓰기.." rows="3"></textarea>
                 </div>
-             </li>
-             <li>
-                 <div>
-                     <time><small>2023-01-01</small></time>
-                     <strong>Uno</strong>
-                     <p>
-                         Lorem ipsim dolor sit amet, consectetur adipiscing elit.<br>
-                         Lorem ipsum dolor sit amet
-                     </p>
-                 </div>
-             </li>
-         </ul>
+                <div class="col-auto">
+                    <label for="comment-submit" hidden>댓글 쓰기</label>
+                    <button class="btn btn-primary" id="comment-submit" type="submit">쓰기</button>
+                </div>
+            </form>
 
-     </section>
+            <ul>
+                <li>
+                    <div>
+                        <time><small>2022-01-01</small></time>
+                        <strong>Uno</strong>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                            Lorem ipsum dolor sit amet
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time><small>2022-01-01</small></time>
+                        <strong>Uno</strong>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                            Lorem ipsum dolor sit amet
+                        </p>
+                    </div>
+                </li>
+            </ul>
 
- </div>
+        </section>
+    </div>
 
     <div class="row g-5">
         <nav aria-label="Page navigation example">
@@ -108,21 +89,11 @@
             </ul>
         </nav>
     </div>
+
 </main>
 
+<footer id="footer"></footer>
 
-
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <p class="col-md-4 mb-0 text-muted">&copy; 2023 Company, Inc</p>
-
-    <ul class="nav col-md-4 justify-content-end">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-
-    </ul>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

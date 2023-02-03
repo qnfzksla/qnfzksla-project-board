@@ -1,3 +1,7 @@
+insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, modified_at, modified_by) values
+    ('qnfzksla', 'zse159', 'Uno', 'uno@mail.com', 'I am Uno.', now(), 'uno', now(), 'uno')
+;
+
 insert into article (title, content, hashtag, created_by, modified_by, created_at, modified_at) values ('Vestibulum ac est lacinia nisi venenatis tristique.', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.', 'Aquamarine', 'Fedora', 'Noak', '2022-06-13 16:05:26', '2022-04-10 08:39:51');
 insert into article (title, content, hashtag, created_by, modified_by, created_at, modified_at) values ('Pellentesque eget nunc.', 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', 'Maroon', 'Latashia', 'Lotty', '2022-05-27 09:01:22', '2022-03-12 09:11:47');
 insert into article (title, content, hashtag, created_by, modified_by, created_at, modified_at) values ('Maecenas ut massa quis augue luctus tincidunt.', 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.', null, 'Jeffy', 'Merle', '2022-11-16 06:36:04', '2022-05-14 19:26:12');
