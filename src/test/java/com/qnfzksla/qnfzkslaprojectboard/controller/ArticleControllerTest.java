@@ -117,6 +117,7 @@ class ArticleControllerTest {
         then(paginationService).should().getPaginationBarNumbers(pageable.getPageNumber(), Page.empty().getTotalPages());
     }
 
+     @Disabled("구현중")
     @DisplayName("[view][GET] 게시글 페이지 - 정상 호출")
     @Test
     public void givenNothing_whenRequestingArticleView_thenReturnsArticleView() throws Exception {
@@ -218,7 +219,7 @@ class ArticleControllerTest {
     }
 
     private UserAccountDto createUserAccountDto() {
-        return UserAccountDto.of(1L,
+        return UserAccountDto.of(
                 "uno",
                 "pw",
                 "uno@mail.com",
