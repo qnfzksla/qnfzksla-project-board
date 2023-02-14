@@ -13,7 +13,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @Import(SecurityConfig.class)
-@WebMvcTest(MainControllerTest.class)
+@WebMvcTest(MainController.class)
 public class MainControllerTest {
 
     private final MockMvc mvc;
@@ -24,7 +24,7 @@ public class MainControllerTest {
     }
 
 
-    @Disabled("구현증")
+
     @Test
     void givenNothing_whenRequestingRootPage_thenRedirectsToArticlesPage() throws Exception {
         // Given
