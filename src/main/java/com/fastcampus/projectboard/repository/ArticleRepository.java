@@ -1,8 +1,8 @@
-package com.qnfzksla.qnfzkslaprojectboard.repository;
+package com.fastcampus.projectboard.repository;
 
-import com.qnfzksla.qnfzkslaprojectboard.domain.Article;
-import com.qnfzksla.qnfzkslaprojectboard.domain.QArticle;
-import com.qnfzksla.qnfzkslaprojectboard.repository.querydsl.ArticleRepositoryCustom;
+import com.fastcampus.projectboard.domain.Article;
+import com.fastcampus.projectboard.domain.QArticle;
+import com.fastcampus.projectboard.repository.querydsl.ArticleRepositoryCustom;
 import com.querydsl.core.types.dsl.DateTimeExpression;
 import com.querydsl.core.types.dsl.StringExpression;
 import org.springframework.data.domain.Page;
@@ -26,17 +26,17 @@ public interface ArticleRepository extends
     Page<Article> findByUserAccount_NicknameContaining(String nickname, Pageable pageable);
     Page<Article> findByHashtag(String hashtag, Pageable pageable);
 
+    void deleteByIdAndUserAccount_UserId(Long articleId, String userid);
 
     @Override
-   default void customize(QuerydslBindings bindings, QArticle root){
+    default void customize(QuerydslBindings bindings, QArticle root) {
         bindings.excludeUnlistedProperties(true);
-        bindings.including(root.title,root.content, root.hashtag, root.createdAt, root.createdBy);
-        bindings.bind(root.title).first(StringExpression::containsIgnoreCase); // like '%@{v}%'
-//        bindings.bind(root.title).first(StringExpression::likeIgnoreCase); // like '' '${v}'
+        bindings.including(root.title, root.content, root.hashtag, root.createdAt, root.createdBy);
+        bindings.bind(root.title).first(StringExpression::containsIgnoreCase);
         bindings.bind(root.content).first(StringExpression::containsIgnoreCase);
         bindings.bind(root.hashtag).first(StringExpression::containsIgnoreCase);
         bindings.bind(root.createdAt).first(DateTimeExpression::eq);
         bindings.bind(root.createdBy).first(StringExpression::containsIgnoreCase);
-
     }
+
 }

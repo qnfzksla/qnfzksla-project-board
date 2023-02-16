@@ -1,13 +1,13 @@
-package com.qnfzksla.qnfzkslaprojectboard.service;
+package com.fastcampus.projectboard.service;
 
-import com.qnfzksla.qnfzkslaprojectboard.domain.Article;
-import com.qnfzksla.qnfzkslaprojectboard.domain.ArticleComment;
-import com.qnfzksla.qnfzkslaprojectboard.domain.UserAccount;
-import com.qnfzksla.qnfzkslaprojectboard.dto.ArticleCommentDto;
-import com.qnfzksla.qnfzkslaprojectboard.dto.UserAccountDto;
-import com.qnfzksla.qnfzkslaprojectboard.repository.ArticleCommentRepository;
-import com.qnfzksla.qnfzkslaprojectboard.repository.ArticleRepository;
-import com.qnfzksla.qnfzkslaprojectboard.repository.UserAccountRepository;
+import com.fastcampus.projectboard.domain.Article;
+import com.fastcampus.projectboard.domain.ArticleComment;
+import com.fastcampus.projectboard.domain.UserAccount;
+import com.fastcampus.projectboard.dto.ArticleCommentDto;
+import com.fastcampus.projectboard.dto.UserAccountDto;
+import com.fastcampus.projectboard.repository.ArticleCommentRepository;
+import com.fastcampus.projectboard.repository.ArticleRepository;
+import com.fastcampus.projectboard.repository.UserAccountRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -25,15 +25,12 @@ import static org.mockito.BDDMockito.*;
 
 @DisplayName("비즈니스 로직 - 댓글")
 @ExtendWith(MockitoExtension.class)
-public class ArticleCommentServiceTest {
+class ArticleCommentServiceTest {
 
-    @InjectMocks
-    private ArticleCommentService sut;
+    @InjectMocks private ArticleCommentService sut;
 
-    @Mock
-    private ArticleRepository articleRepository;
+    @Mock private ArticleRepository articleRepository;
     @Mock private ArticleCommentRepository articleCommentRepository;
-
     @Mock private UserAccountRepository userAccountRepository;
 
     @DisplayName("게시글 ID로 조회하면, 해당하는 댓글 리스트를 반환한다.")
@@ -67,8 +64,8 @@ public class ArticleCommentServiceTest {
         sut.saveArticleComment(dto);
 
         // Then
-        then(userAccountRepository).should().getReferenceById(dto.userAccountDto().userId());
         then(articleRepository).should().getReferenceById(dto.articleId());
+        then(userAccountRepository).should().getReferenceById(dto.userAccountDto().userId());
         then(articleCommentRepository).should().save(any(ArticleComment.class));
     }
 
@@ -127,13 +124,14 @@ public class ArticleCommentServiceTest {
     void givenArticleCommentId_whenDeletingArticleComment_thenDeletesArticleComment() {
         // Given
         Long articleCommentId = 1L;
-        willDoNothing().given(articleCommentRepository).deleteById(articleCommentId);
+        String userId = "uno";
+        willDoNothing().given(articleCommentRepository).deleteByIdAndUserAccount_UserId(articleCommentId, userId);
 
         // When
-        sut.deleteArticleComment(articleCommentId);
+        sut.deleteArticleComment(articleCommentId, userId);
 
         // Then
-        then(articleCommentRepository).should().deleteById(articleCommentId);
+        then(articleCommentRepository).should().deleteByIdAndUserAccount_UserId(articleCommentId, userId);
     }
 
 
@@ -152,7 +150,6 @@ public class ArticleCommentServiceTest {
 
     private UserAccountDto createUserAccountDto() {
         return UserAccountDto.of(
-
                 "uno",
                 "password",
                 "uno@mail.com",
@@ -191,7 +188,5 @@ public class ArticleCommentServiceTest {
                 "#java"
         );
     }
-
-
 
 }
