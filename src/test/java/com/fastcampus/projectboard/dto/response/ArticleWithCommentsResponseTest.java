@@ -37,7 +37,7 @@ class ArticleWithCommentsResponseTest {
         ArticleWithCommentsResponse actual = ArticleWithCommentsResponse.from(input);
 
         // Then
-        assertThat(actual.articleCommentsResponse())
+        assertThat(actual.articleCommentResponse())
                 .containsExactly(
                         createArticleCommentResponse(8L, null, now.plusDays(7L)),
                         createArticleCommentResponse(5L, null, now.plusDays(5L)),
@@ -71,7 +71,7 @@ class ArticleWithCommentsResponseTest {
         ArticleWithCommentsResponse actual = ArticleWithCommentsResponse.from(input);
 
         // Then
-        assertThat(actual.articleCommentsResponse())
+        assertThat(actual.articleCommentResponse())
                 .containsExactly(
                         createArticleCommentResponse(5L, null, now.plusDays(5)),
                         createArticleCommentResponse(6L, null, now.plusDays(4)),
@@ -108,7 +108,7 @@ class ArticleWithCommentsResponseTest {
         ArticleWithCommentsResponse actual = ArticleWithCommentsResponse.from(input);
 
         // Then
-        Iterator<ArticleCommentResponse> iterator = actual.articleCommentsResponse().iterator();
+        Iterator<ArticleCommentResponse> iterator = actual.articleCommentResponse().iterator();
         long i = 1L;
         while (iterator.hasNext()) {
             ArticleCommentResponse articleCommentResponse = iterator.next();
