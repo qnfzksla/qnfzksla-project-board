@@ -31,7 +31,7 @@
         )}"/>
                 <attr sel="th.user-id/a" th:text="'작성자'" th:href="@{/articles(
             page=${articles.number},
-            sort='userAccount.userId' + (*{sort.getOrderFor('userAccount.userId')} != null ? (*{sort.getOrderFor('userAccount.userId').direction.name} != 'DESC' ? ',desc' : '') : ''),
+            sort='adminAccount.userId' + (*{sort.getOrderFor('adminAccount.userId')} != null ? (*{sort.getOrderFor('adminAccount.userId').direction.name} != 'DESC' ? ',desc' : '') : ''),
             searchType=${param.searchType},
             searchValue=${param.searchValue}
         )}"/>
