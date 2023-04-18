@@ -45,7 +45,7 @@ public record BoardPrincipal(
         );
     }
 
-    public static BoardPrincipal from(UserAccountDto dto) {
+    public static BoardPrincipal from(UserAccountDto dto) { /**인증 정보 UserAccountDto를 인증정보로 바꾼다 */
         return BoardPrincipal.of(
                 dto.userId(),
                 dto.userPassword(),
